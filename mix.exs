@@ -22,7 +22,7 @@ defmodule Ngrok.Mixfile do
       sleep_between_attempts: 200,
       options: "",
      ],
-     mod: {Ngrok, []}]
+     mod: {Ngrok.Application, []}]
   end
 
   defp deps do
