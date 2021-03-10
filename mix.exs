@@ -1,4 +1,4 @@
-defmodule Ngrok.Mixfile do
+defmodule ExNgrok.Mixfile do
   use Mix.Project
 
   def project do
@@ -13,16 +13,18 @@ defmodule Ngrok.Mixfile do
   end
 
   def application do
-    [extra_applications: [:logger],
-     env: [
-      api_url: "http://localhost:4040/api/tunnels",
-      executable: "ngrok",
-      protocol: "http",
-      port: "4000",
-      sleep_between_attempts: 200,
-      options: "",
-     ],
-     mod: {Ngrok.Application, []}]
+    [
+      extra_applications: [:logger],
+      env: [
+        api_url: "http://localhost:4040/api/tunnels",
+        executable: "ngrok",
+        protocol: "http",
+        port: "4000",
+        sleep_between_attempts: 200,
+        options: "",
+      ],
+      mod: {ExNgrok.Application, []}
+    ]
   end
 
   defp deps do
