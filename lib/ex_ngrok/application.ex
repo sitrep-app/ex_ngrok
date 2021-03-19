@@ -5,7 +5,7 @@ defmodule ExNgrok.Application do
   def start(_type, _args) do
     children = [
       ExNgrok.Executable,
-      ExNgrok.Settings,
+      ExNgrok.Settings
     ]
 
     opts = [strategy: :rest_for_one, name: ExNgrok.Supervisor]
