@@ -5,13 +5,13 @@ defmodule ExNgrok.Executable do
   """
   use GenServer
 
-  def start_link do
+  def start_link(_) do
     GenServer.start_link(__MODULE__, :ok, name: __MODULE__)
   end
 
   def init(:ok) do
     port = Port.open(
-      {:spawn, "#{Path.dirname(__ENV__.file)}/../bin/wrap #{ngrok()}"},
+      {:spawn, "#{__DIR__}/../../bin/wrap #{ngrok()}"},
       [])
     {:ok, port}
   end
